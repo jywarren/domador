@@ -70,7 +70,9 @@ test('end-heading get the appropriate treatment', function (t) {
 test('domador gets fencing', function (t) {
   t.equal(domador('<p>foo</p><pre><code>var bar = 1</code></pre>', { fencing: true }), 'foo\n\n```\nvar bar = 1\n```');
   t.equal(domador('<p>foo</p><pre><code>var bar = 1</code></pre><p>baz</p>', { fencing: true }), 'foo\n\n```\nvar bar = 1\n```\n\nbaz');
+  t.equal(domador('<p>foo</p><pre><code>var bar = 1\n// and a comment?</code></pre><p>baz</p>', { fencing: true }), 'foo\n\n```\nvar bar = 1\n// and a comment?\n```\n\nbaz');
   t.equal(domador('<p>foo</p><pre><code>var bar = 1;\nconsole.log(bar);</code></pre>', { fencing: true }), 'foo\n\n```\nvar bar = 1;\nconsole.log(bar);\n```');
+  t.equal(domador('<p>foo</p><pre><code><span class="md-code-comment">// Code could go here</span>\n<span class="md-code-keyword">var</span> myVariable = <span class="md-code-number">4</span>;\n\n</code></pre>', { fencing: true }), 'foo\n\n```js\n\n// Code could go here\nvar myVariable = 4;\n\n```');
   t.end();
 });
 
