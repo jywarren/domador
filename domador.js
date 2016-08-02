@@ -42,7 +42,7 @@ var paragraphTags = [
   'ADDRESS', 'ARTICLE', 'ASIDE', 'DIV', 'FIELDSET', 'FOOTER', 'HEADER', 'NAV', 'P', 'SECTION'
 ];
 var blockTags = [
-  'ADDRESS', 'ARTICLE', 'ASIDE', 'DIV', 'FIELDSET', 'FOOTER', 'HEADER', 'NAV', 'P', 'SECTION', 'UL', 'LI', 'BLOCKQUOTE', 'BR'
+  'ADDRESS', 'ARTICLE', 'ASIDE', 'DIV', 'FIELDSET', 'FOOTER', 'HEADER', 'NAV', 'P', 'SECTION', 'UL', 'LI', 'BLOCKQUOTE', 'BR', 'TABLE', 'TR', 'TD'
 ];
 var windowContext = require('./virtualWindowContext');
 

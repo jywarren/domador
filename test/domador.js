@@ -333,12 +333,17 @@ test('tables preserve html block or br elements in cells', function (t) {
     <td><ul><li>A list of one</li></ul></td>
     <td>bars</td>
     </tr>
+    <tr>
+    <td><table><tr><td>A list of one</td></tr></table></td>
+    <td>bars</td>
+    </tr>
     </tbody>
     </table>`),
 `| column1 with a very long header | column2 |
 |---------------------------------|---------|
 | <div>foo</div>                  | bar<br> |
-| <ul><li>A list of one</li></ul> | bars    |`);
+| <ul><li>A list of one</li></ul> | bars    |
+| <table><tr><td>A list of one</td></tr></table> |`);
   t.end();
 });
 
